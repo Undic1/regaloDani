@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuki is the best</title>
+
+    <style>
+        body {
+            font-family: 'Helvetica', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: url('santa-background.jpg') center/cover; /* Immagine di Babbo Natale come sfondo */
+            color: #fff; /* Colore del testo */
+            position: relative;
+        }
+
+        .title {
+            font-size: 25px;
+            margin-bottom: 25px;
+            line-height: 1.3;
+            max-width: 1000px;
+            margin: margin: 10px 0 5px;
+        }
+
+        .centrale {
+            font-size: 13px;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            max-width: 1000px;
+            margin: margin: 10px 0 5px;
+        }
+
+        button {
+            background-color: #fff; /* Colore del bottone */
+            color: #e74c3c; /* Colore del testo del bottone */
+            font-size: 24px; /* Dimensione del testo */
+            padding: 15px 30px; /* Dimensioni del bottone */
+            border: none;
+            cursor: pointer;
+            border-radius: 10px; /* Bordo arrotondato */
+            margin-bottom: 10px; /* Spaziatura dal paragrafo */
+            margin-top: 10px; /* Aggiunto margine superiore per spostare il bottone in alto */
+            transition: background-color 0.3s, color 0.3s; /* Animazione di transizione */
+        }
+
+        button:hover {
+            background-color: #e74c3c; /* Cambia colore al passaggio del mouse */
+            color: #fff;
+        }
+
+        .small-button {
+            background-color: rgb(23, 23, 93); /* Colore del bottone */
+            color: #fff; /* Colore del testo del bottone */
+            font-size: 16px; /* Dimensione del testo */
+            padding: 40px 20px; /* Padding per determinare la dimensione del bottone */
+            border: none;
+            cursor: pointer;
+            border-radius: 50%; /* Rendi il bottone completamente rotondo (un cerchio perfetto) */
+            position: fixed; /* Imposta la posizione fissata rispetto alla finestra del browser */
+            bottom: 20px; /* Distanza dal fondo della finestra del browser */
+            right: 20px; /* Distanza dal lato destro della finestra del browser */
+            transition: background-color 0.3s, color 0.3s; /* Animazione di transizione */
+            display: flex; /* Utilizza un modello di layout flessibile */
+            align-items: center; /* Allinea gli elementi al centro verticalmente */
+            justify-content: center; /* Allinea gli elementi al centro orizzontalmente */
+        }
+
+        .small-button:hover {
+            background-color: darkblue; /* Cambia colore al passaggio del mouse */
+        }
+
+
+        p {
+            font-size: 13px; /* Dimensione del testo */
+            margin: 10px 0 5px; /* Spaziatura tra i paragrafi, con margine inferiore più piccolo */
+        }
+
+     
+      
+
+    </style>
+</head>
+
+<body>
+
+   <div>
+    <div class="title"> The super App your friend Luna made for you!
+
+
+    </div class="centrale">
+
+    <div class="header">
+        <p>L'intento di questa pagina è darti ispirazione quando ne hai bisogno.</p> 
+        <p> Quando c'è un giorno che ti senti demotivata, stanca e svogliata clicchi qui e vedi se c'è qualcosa che ti ispiri.</p>
+
+        <p>Spero che ti possa aiutare nei giorni difficili, ma la puoi usare, ed è divertente, anche nei giorni buoni che hai voglia di fare tante cose.</p>
+        <p> Ci sono tanti spunti interessanti!</p>
+
+        <p>P.S: Le cose in questa lista sono in forma randomica e includono attività da svolgere in casa. </p>
+            
+        <p>Sono quelle attività che rimandiamo sempre, ma anche quelle che ci fanno divertire e quelle che ci fanno bene.</p>
+
+        <p>Lo scopo è metterle tutte insieme perché almeno una di queste cose ci può spronare a fare una piccola cosa che ci faccia stare meglio.</p>
+
+        <p>La lista di cose da fare può essere aggiornata anche con delle cose da includere personalmente.</p>
+
+        <p>Può succedere che un giorno ti venga l'idea di fare qualcosa che non ti va di fare subito. </p>
+            <p>Segnatela e io la aggiungerò alla lista per tirarla fuori di nuovo quando meno te lo aspetti.</p>
+            <p> Tieni costantemente aggiornata questa pagina perchè ci sono tanti aggiornamenti in arrivo per te, puoi salvare questa pagina sul tuo telefono e usarla quando vuoi senza limiti di tempo!</p>
+    </div> <!--chiuso header-->
+
+
+    <div class="primoBottone">
+    <button onclick="generaFraseRandom()">Scopri cosa fare</button>
+    <p id="fraseRandom"></p>
+
+    <script>
+        const frasi = [
+                "Lavatrice",
+                "Fare manicure",
+                "Cucinare",
+                "Fare una tazza di tè",
+                "Mettere in ordine l'armadio",
+                "Ascoltare canzoni nuove per Pole Dance",
+                "Aggiustare vestiti",
+                "Riordinare la stanza",
+                "Pulire il bagno",
+                "Fare un massaggio alla schiena con il massaggiatore",
+                "Truccarti figa",
+                "Scrivere a un'amica/o",
+                "Lavarmi bene i denti",
+                "Depilarmi",
+                "Scrivi una pagina di diario",
+                "Meditare",
+                "Suona la batteria",
+                "Leggere un libro",
+                "10 minuti di stretching",
+                "10 minuti di allenamento per la schiena",
+                "Chiama mamma",
+                "Aggiustare il curriculum",
+                "Scrivere un post su Instagram",
+                "Guardare un film storico",
+                "Mangiare un dolce, se lo hai fatto tu meglio!",
+                "Accendi luci colorate, metti musica e balla!",
+                "Fare esercizi di portoghese",
+                "Scrivere una lettera in portoghese a un amico immaginario",
+                "È ora di ascoltare Einaudi e respirare, almeno una canzone.",
+                "È ora di disegnare qualcosa sul Tablet.",
+                "Fare la pedicure",
+                "Fai finta di essere... chiunque vuoi!",
+                "Aggiorna il calendario mensile",
+                "Prenditi 10 minuti per farti venire qualche idea nuova.",
+                "Fare quello che ti pare, anche un cazzo di niente va bene.",
+                "Aggiorna Linkedin",
+                "Compra una cazzatina online",
+                "Aggiusta la lista di desideri di libri su Kindle",
+                "Cambia gioielli",
+                "Usa tutti i prodotti cosmetici che hai, creme, scrub, elisir di bellezza",
+                "Organizza una uscita con le amiche",
+                "Scrivi a Loretta",
+                "Scrivi a Luna",
+                "Scrivi ad Isabella",
+                "Scrivi a Daniele",
+                "Prova ad interagire con qualche nuova amica portoghese",
+                "Cerca su Instagram persone che ti ispirano a Lisbona",
+                "Ascolta Tony Robbins su YouTube",
+                "Prendi la macchietta fotografica e pulisci i files",
+                "Scata qualche foto",
+                "disegna un tatuaggio",
+                "Cancella files inutili su Google Foto",
+                "Cancella files inutili su Google Drive",
+                "Cerca nuova musica",
+                "Metti in ordine la dispensa della cucina",
+                "Beh facciamo rosicare qualcuno, metti una storia su Instagram che faccia vedere quanto sei figa!",
+                "Approfondiamo legge di attrazione, scrivi 3 cose che vuoi ottenere, in base al tuo stato d'animo sii più o meno specifica",
+                "Scrivi un messaggio alla Daniela Futura tramite Google Calendar, un messaggio a tra 1 mese, 1 anno e 3 anni, non guasta mettere anche uno a 10 anni",
+                "Ascolta Audible, prendi un libro dalla libreria",
+                "Ascolta i libri di Sara su Audible",
+                "Migliora la calligrafia, cerca di ricopiare un testo in bella grafia",
+                "Fai una videochiamata di gruppo",
+                "leggi un blog",
+                "Cerca un corso da seguire su Udemy",
+                "Organizzate uno swap party virtuale con le amiche",
+                "Tutto ciò che è vecchio e brutto va buttato, ma se è vecchio e bello? Vendi online i vecchi capi firmati, ad esempio su eBay o Depop",
+                "Fai una ipnosi guidata",
+                "Apri un account su Pinterest dove mettere i tuoi tatuaggi",
+                "Truccati, vestiti figa e fatti un selfie!",
+                "Pensa ai giochi erotici che vorresti provare",
+                "Seduci Roberto",
+                "Porta a spasso Leia",
+                "Organizza una festa",
+                "Aggiorna i Social Media che vuoi",
+                "Riordina il bagno",
+                "Riordina la camera",
+                "Fai uno scherzo a qualcuno",
+                "Gioca a Harry Potter",
+                "Crea delle nuove decorazioni per la casa",
+                "Fai una lista delle cose che vorresti mangiare",
+                "Fai una lista delle attività che prima o poi vorresti fare",
+                "Fai una lista dei posti che vorresti visitare",
+                "Organizza un viaggio",
+                "Fate pulizia anche sui canali social, partendo dall’unfollow dei profili instagram che non ti interessano più o ti trasmettono cattive vibrazioni",
+                "Scegli un video in questo canale :https://www.youtube.com/@AbrahamHicks/"
+                            // ... (Aggiungi altre frasi)
+        ];
+
+        function generaFraseRandom() {
+            const indiceRandom = Math.floor(Math.random() * frasi.length);
+            const fraseRandom = frasi[indiceRandom];
+            document.getElementById("fraseRandom").innerHTML = fraseRandom;
+        }
+    </script>
+</div> <!-- chiuso spazio primoBottone -->
+
+
+
+</div> <!-- chiuso spazio .centrale -->
+      <!-- Nuovo bottone più piccolo -->
+     
+      <button class="small-button" onclick="altroBottone()">Cliccami</button>
+
+      <script>
+          // ... (il resto del tuo script) ...
+          
+          // Funzione associata al nuovo bottone più piccolo
+          function altroBottone() {
+              alert("Hai cliccato sull'altro bottone!");
+          }
+
+         
+      </script>
+
+
+
+</body>
+
+</html>
